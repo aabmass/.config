@@ -1,0 +1,6 @@
+TODO:
+    - nvidia driver is loaded by XWayland
+    - waybar could be prettier
+    - acpi-ease-backlight implement locking
+    - blur inactive windows?
+    - hide blue bar at top?
