@@ -1,6 +1,6 @@
 * {
 	font-size: 18px;
-	font-family: Roboto;
+	font-family: Ubuntu Nerd Font;
 }
 
 window#waybar {
@@ -75,6 +75,6 @@ window#waybar {
 
 }
 #idle_inhibitor {
-    padding: 0 0;
-    font-size: 28px;
+    padding-right: 0;
+    font-size: 18px;
 }

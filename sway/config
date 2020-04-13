@@ -81,7 +81,11 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     timeout $lock_screen_timeout '$swayexit lock' \
     timeout $suspend_timeout 'systemctl suspend' \
-    after-resume 'swaymsg "output * dpms on"'
+    after-resume 'swaymsg "output * dpms on"' \
+    before-sleep '$swayexit lock'
+
+# inhibit idle for full screen chrome (like caffeine)
+for_window [instance="google-chrome"] inhibit_idle fullscreen
 
 # Add transparency effect to inactive windows. See cli args
 exec /usr/share/sway/scripts/inactive-windows-transparency.py -o 0.8
@@ -95,7 +99,7 @@ mode "$mode_system" {
     bindsym h exec $swayexit hibernate, mode "default"
     bindsym r exec $swayexit reboot, mode "default"
     bindsym Shift+s exec $swayexit shutdown, mode "default"  
-    # back tonormal: Enter or Escape
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }

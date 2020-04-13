@@ -1,6 +1,8 @@
 TODO:
-    - nvidia driver is loaded by XWayland
+    - nvidia driver is loaded by XWayland. BBSwitch not working?
     - waybar could be prettier
+    - waybar/gtk fonts?
     - acpi-ease-backlight implement locking
     - blur inactive windows?
     - hide blue bar at top?
+    - suspend on lid close even when idle_inhibitor active

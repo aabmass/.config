@@ -23,20 +23,10 @@
 	"modules-right": [
 		"custom/left-arrow-dark",
 		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"backlight",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"temperature",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -72,8 +62,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "",
+      "deactivated": ""
     }
   },
 
@@ -94,12 +84,13 @@
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
+		"format-muted": "ﱝ Mute",
 		"format-icons": {
-			"headphones": "",
+			"headphones": "",
 			"default": [
-				"",
-				""
+				"奄",
+        "奔",
+				"墳"
 			]
 		},
 		"scroll-step": 5,
@@ -107,8 +98,8 @@
 		"on-click-right": "pavucontrol"
 	},
   "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", ""]
   },
 	"memory": {
 		"interval": 5,
@@ -120,8 +111,8 @@
 	},
   "temperature": {
     "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C "
+    "format-critical": " {temperatureC}°C ",
+    "format": " {temperatureC}°C"
   },
 	"battery": {
 		"states": {
@@ -131,11 +122,7 @@
 		},
 		"format": "{icon} {capacity}%",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+      "","", "", "","","","","","",""
 		]
 	},
 	"tray": {
