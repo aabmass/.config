@@ -65,9 +65,6 @@ window#waybar {
 #temperature {
 	color: #c6a6e0;
 }
-#battery {
-	color: #859900;
-}
 #disk {
 	color: #b58900;
 }
@@ -76,4 +73,30 @@ window#waybar {
 }
 #idle_inhibitor {
     padding-right: 0;
+}
+
+/**
+ * Style for battery module, including animation when discharging or nearly
+ * empty
+ */
+#battery {
+	color: #859900;
+}
+#battery.discharging {
+    font-style: italic;
+    animation: blinker 7s ease-in-out infinite;
+}
+#battery.discharging.warning {
+    color: #fffd80;
+    animation-duration: 5s;
+}
+#battery.discharging.critical {
+    background-color: #fffd80;
+    color: #f54545;
+    animation-duration: 3s;
+}
+@keyframes blinker {  
+    50% {
+        opacity: 0.15;
+    }
 }

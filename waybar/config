@@ -115,12 +115,15 @@
     "format": " {temperatureC}°C"
   },
 	"battery": {
+    "interval": 5,
 		"states": {
 			"good": 95,
-			"warning": 30,
-			"critical": 15
+			"warning": 40,
+			"critical": 25 
 		},
-		"format": "{icon} {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-discharging": "{icon} {capacity}% ({time}) ﮤ",
+    "format-charging": "{icon} {capacity}% ﮣ",
 		"format-icons": [
       "","", "", "","","","","","",""
 		]
