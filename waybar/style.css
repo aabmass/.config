@@ -1,5 +1,5 @@
 * {
-	font-size: 18px;
+	font-size: 20px;
 	font-family: Ubuntu Nerd Font;
 }
 
@@ -76,5 +76,4 @@ window#waybar {
 }
 #idle_inhibitor {
     padding-right: 0;
-    font-size: 18px;
 }

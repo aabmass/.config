@@ -10,8 +10,12 @@ set $swayexit ~/.config/sway/swayexit
 set $blank_screen_timeout 120
 set $lock_screen_timeout 300
 set $suspend_timeout 600
+########################### end variables ###########################
 
 ########################### begin modifications ###########################
+
+# turn off disable while typing for trackpad
+input 2:7:SynPS/2_Synaptics_TouchPad dwt disable
 
 # dim/brighten screen
 ## use acpi_brightness python script I wrote instead!
@@ -128,7 +132,6 @@ floating_modifier Mod4
 
 # start a terminal
 bindsym $mod+Return exec "alacritty"
-bindsym $mod+Shift+Return exec "hyper"
 
 # start nautilus without desktop replacement
 bindsym $mod+n exec "nautilus"
