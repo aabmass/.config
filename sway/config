@@ -4,7 +4,8 @@
 ########################### begin variables ###########################
 # Super key
 set $mod Mod4
-set $swayexit ~/.config/sway/swayexit
+set $confdir ~/.config/sway
+set $swayexit $confdir/swayexit
 
 # timeouts for idle management
 set $blank_screen_timeout 120
@@ -16,6 +17,9 @@ set $suspend_timeout 600
 
 # turn off disable while typing for trackpad
 input 2:7:SynPS/2_Synaptics_TouchPad dwt disable
+
+# start mako notification daemon early
+exec mako
 
 # dim/brighten screen
 ## use acpi_brightness python script I wrote instead!
@@ -79,14 +83,8 @@ exec /usr/bin/gnome-keyring-daemon -sd
 
 ### end startup apps ###
 
-# For blank monitor after 600s (10 min)
-exec swayidle -w \
-    timeout $blank_screen_timeout 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    timeout $lock_screen_timeout '$swayexit lock' \
-    timeout $suspend_timeout 'systemctl suspend' \
-    after-resume 'swaymsg "output * dpms on"' \
-    before-sleep '$swayexit lock'
+# For blank monitor with modes, use my script :D start with low
+exec_always $confdir/swayidle_presets.py short
 
 # inhibit idle for full screen chrome (like caffeine)
 for_window [instance="google-chrome"] inhibit_idle fullscreen

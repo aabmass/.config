@@ -24,6 +24,7 @@
 		"custom/left-arrow-dark",
 		"pulseaudio",
 		"backlight",
+    "custom/idle_presets",
 		"memory",
 		"cpu",
 		"temperature",
@@ -49,6 +50,15 @@
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
+	},
+	"custom/idle_presets": {
+    "exec": "~/.config/sway/swayidle_presets.py --current_mode",
+    "on-click": "~/.config/sway/swayidle_presets.py next --signal_waybar 7",
+    "interval": "once",
+    "signal": 7,
+		"format": " {}",
+		"tooltip": true,
+    "return-type": "json"
 	},
 
 	"sway/workspaces": {

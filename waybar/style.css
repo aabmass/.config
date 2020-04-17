@@ -31,7 +31,8 @@ window#waybar {
 #tray,
 #mode,
 #temperature,
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-idle_presets {
 	background: #1a1a1a;
     padding: 0 10px;
 }
