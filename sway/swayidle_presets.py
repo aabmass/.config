@@ -15,7 +15,11 @@ SWAYEXIT_SCRIPT = "~/.config/sway/swayexit"
 
 # Dict of modes where each entry is a tuple of blank screen timeout, lock screen
 # timeout, and suspend timeout
-MODES = {"short": (120, 300, 600), "medium": (300, 600, 900), "long": (600, 900, 1200)}
+MODES = {
+    "short": (120, 300, 600),
+    "medium": (300, 600, 900),
+    "long": (600, 900, 1200),
+}
 
 
 @dataclass

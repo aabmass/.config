@@ -7,10 +7,6 @@ set $mod Mod4
 set $confdir ~/.config/sway
 set $swayexit $confdir/swayexit
 
-# timeouts for idle management
-set $blank_screen_timeout 120
-set $lock_screen_timeout 300
-set $suspend_timeout 600
 ########################### end variables ###########################
 
 ########################### begin modifications ###########################
@@ -18,13 +14,17 @@ set $suspend_timeout 600
 # turn off disable while typing for trackpad
 input 2:7:SynPS/2_Synaptics_TouchPad dwt disable
 
+# outputs - needs work since this full res isn't detected
+output HDMI-A-1 mode 2560x1440
+
+
 # start mako notification daemon early
 exec mako
 
 # dim/brighten screen
 ## use acpi_brightness python script I wrote instead!
-bindsym XF86MonBrightnessUp exec ~/.local/bin/acpi-ease-backlight -d 0.15 inc 500
-bindsym XF86MonBrightnessDown exec ~/.local/bin/acpi-ease-backlight -d 0.15 dec 500
+bindsym XF86MonBrightnessUp exec brillo -u 100000 -A 5
+bindsym XF86MonBrightnessDown exec brillo -u 100000 -U 5
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -280,6 +280,11 @@ bar {
     swaybar_command waybar
 }
 
-# Remove blue window bar i3 uses
-# TODO: not working :(
-for_window [class="^.*"] border pixel 0
+########################### begin app/window overrides ###########################
+# Remove border/title for
+for_window [app_id="^.*"] border none    # for Wayland
+for_window [class="^.*"] border none     # for Xwayland
+
+# Windows/apps that should float by default
+for_window [app_id="gnome-calculator"] floating enable
+########################### end app/window overrides ###########################
