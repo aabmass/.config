@@ -15,8 +15,8 @@ set $swayexit $confdir/swayexit
 input 2:7:SynPS/2_Synaptics_TouchPad dwt disable
 
 # outputs - needs work since this full res isn't detected
-output HDMI-A-1 mode 2560x1440
-
+output HDMI-A-1 pos 0 0 res 2560x1440
+output LVDS-1 pos 320 1440 res 1920x1080
 
 # start mako notification daemon early
 exec mako
@@ -78,8 +78,11 @@ exec /usr/bin/nm-applet --indicator
 # exec /usr/bin/wicd-client --tray
 
 # desktop apps
-exec /usr/bin/google-chrome-stable
+exec /usr/bin/google-chrome-unstable
 exec /usr/bin/gnome-keyring-daemon -sd
+
+# checkbattery script running on a timer
+exec_always "while sleep 1; do $confdir/checkbattery.sh; done"
 
 ### end startup apps ###
 
